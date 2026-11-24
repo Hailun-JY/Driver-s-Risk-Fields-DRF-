@@ -1,0 +1,9 @@
+fcost = @(delta_optim)min_delta_cost_Ct(delta_optim,phiv_a,tla,par1,cexp,...
+                                    v_inter_temp,L,xv,yv,res,kexp1,kexp2,mcexp,...
+                                    Env,ii,Ct,delta_fut_h,...
+                                    Pipe_sequence,Is,Obs_sequence,Os,dt,delta1,Car_Nrp_Idx);
+                                                               
+    
+% -------------------------------------------------------------------------%
+[delta_cost_min,cost_Ct] = fminbnd(fcost,delta_fut_h-dstep_max,delta_fut_h+dstep_max);
+cost_min=cost_Ct+Ct;
